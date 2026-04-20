@@ -2,417 +2,72 @@
 <html lang="id">
     <!-- PWA Manifest & Service Worker -->
 <link rel="manifest" href="data:application/manifest+json,{
-  \"name\": \"Undangan Wisuda [Nama Anak]\",
-  \"short_name\": \"Wisuda\",
-  \"description\": \"Undangan Wisuda SKKK Bandung\",
+  \"name\": \"Undangan Penutupan Lulusan [Nama Anak]\",
+  \"short_name\": \"Penutupan Lulusan\",
+  \"description\": \"Undangan Penutupan & Perkenalan Lulusan SKKK Bandung\",
   \"start_url\": \".\",
   \"display\": \"standalone\",
   \"background_color\": \"#0a1d37\",
   \"theme_color\": \"#fbbf24\",
   \"icons\": [{
-    \"src\": \"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMwYTE5MzdhIi8+CjxwYXRoIGQ9Ik0xMjAgOTZIMTY4TDk2IDE2NEw0OCAxNjBIMTYwTDExMiA5Nkg0OEM0OCAxMjQgNjAgMTM2IDg0IDEzNkgxMDhMMzIgNjRIMTkyTDExMiA5NkgxMjAiIGZpbGw9IiNmYmJmMjQiLz4KPHRleHQgeD0iOTYiIHk9IjExMiIgZm9udC1mYW1pbHk9IkNpbnplbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+PgDw8PC9UZXh0Pgo8L3N2Zz4=\",
+    \"src\": \"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMwYTE5MzdhIi8+CjxwYXRoIGQ9Ik0zMiA0OGgxMjh2NDhoLTQ4bC0yNCAyNGgtNDhsLTI0LTI0aC00OHYtNDhaTTMyIDk2aDEyOHYtNDhoLTQ4bC0yNCAyNGgtNDhsLTI0LTI0aC00OHYtNDhaIiBmaWxsPSIjZmJiZjI0Ii8+CjxwYXRoIGQ9Ik0zMiAxNDQuMkw0OCwxNjBIMTQ0TDE2MCwxNDQuMkgzMloiIGZpbGw9IiNmYmJmMjQiLz4KPHRleHQgeD0iOTYiIHk9IjExMiIgZm9udC1mYW1pbHk9IkNpbnplbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RNDY8SA8L3RleHQ+Cjwvc3ZnPg==\",
     \"sizes\": \"192x192\",
     \"type\": \"image/svg+xml\"
   }]
 }">
 <meta name="theme-color" content="#fbbf24">
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iMjQiIGZpbGw9IiMwYTE5MzdhIi8+CjxwYXRoIGQ9Ik0xMDggOTZIMTU2TDk0IDE2NEw0NiAxNjBIMTYwTDExMiA5Nkg0OEM0OCA5NiA0OCA5NiA0OCA5NkgxMjAiIGZpbGw9IiNmYmJmMjQiLz4KPHRleHQgeD0iOTAiIHk9IjEwOCIgZm9udC1mYW1pbHk9IkNpbnplbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+PgDw8PC9UZXh0Pgo8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iMjQiIGZpbGw9IiMwYTE5MzdhIi8+CjxwYXRoIGQ9Ik0yNCA0NGgxMjR2NDRoLTQ0bC0yNCAyNGgtNDRsLTI0LTI0aC00NC12NDhaTTI0IDkyaDEyNHYtNDRoLTQ0bC0yNCAyNGgtNDRsLTI0LTI0aC00NC12NDhaIiBmaWxsPSIjZmJiZjI0Ii8+CjxwYXRoIGQ9Ik0yNCAxNDAuMkw0MCwxNTZIMTE2TDEzMiwxNDAuMkgyNHoiIGZpbGw9IiNmYmJmMjQiLz4KPHRleHQgeD0iOTAiIHk9IjEwOCIgZm9udC1mYW1pbHk9IkNpbnplbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RNDY8SA8L3RleHQ+Cjwvc3ZnPg==">
+<link rel="stylesheet" href="style.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Wisuda - [Nama Anak] - SKKK Bandung</title>
+    <title>Undangan Penutupan Lulusan SKKK Bandung 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, #0a1d37 0%, #1e3a5f 50%, #0f172a 100%);
-            color: #f8fafc;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(251,191,36,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(59,130,246,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(251,191,36,0.05) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 2rem 1rem;
-            position: relative;
-        }
-
-        .gold-line {
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #fbbf24, #f59e0b, #fbbf24, transparent);
-            margin: 0 auto 2rem;
-            width: 200px;
-            border-radius: 2px;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 0 10px rgba(251,191,36,0.5); }
-            to { box-shadow: 0 0 20px rgba(251,191,36,0.8); }
-        }
-
-        .main-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b, #eab308);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(251,191,36,0.5);
-        }
-
-        .subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            color: #e2e8f0;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .section {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(251,191,36,0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #fbbf24, #3b82f6, #fbbf24);
-        }
-
-        .section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 35px 70px rgba(251,191,36,0.2);
-            border-color: rgba(251,191,36,0.4);
-        }
-
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: #fbbf24;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #fbbf24, transparent);
-        }
-
-        /* Event Details */
-        .event-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .event-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(251,191,36,0.1);
-            border-radius: 15px;
-            border: 1px solid rgba(251,191,36,0.3);
-        }
-
-        .event-icon {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .event-value {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .event-label {
-            color: #94a3b8;
-            font-size: 0.95rem;
-        }
-
-        /* RSVP */
-        .rsvp-btn {
-            display: block;
-            width: 100%;
-            padding: 1.2rem 2rem;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            color: #0f172a;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        .rsvp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(251,191,36,0.4);
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-
-        /* Dress Code */
-        .dress-code {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .dress-item {
-            background: rgba(59,130,246,0.2);
-            padding: 1rem 1.5rem;
-            border-radius: 25px;
-            border: 1px solid rgba(59,130,246,0.4);
-            color: #bfdbfe;
-            font-weight: 500;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
-        .heart {
-            color: #fbbf24;
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .section {
-                padding: 2rem 1.5rem;
-            }
-            
-            .main-title {
-                letter-spacing: 2px;
-            }
-        }
-
-        /* Loading Animation */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #0a1d37, #1e3a5f);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-content {
-            text-align: center;
-        }
-
-        .loader-icon {
-            font-size: 4rem;
-            background: linear-gradient(135deg, #fbbf24, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: spin 2s linear infinite;
-            margin-bottom: 1rem;
-        }
-
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
-        }
-
-        .container {
-           display: none;
-        }
-        .btn-gold {
-            padding: 12px 30px;
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #0f172a;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(251,191,36,0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* efek glow */
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(251,191,36,0.6);
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-
-        /* efek shine geser */
-        .btn-gold::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -75%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255,255,255,0.6),
-                transparent
-            );
-            transform: skewX(-20deg);
-        }
-
-        .btn-gold:hover::before {
-            left: 130%;
-            transition: 0.7s;
-        }
-
-        #nisInput {
-            padding: 12px 15px;
-            border-radius: 12px;
-            border: 2px solid rgba(251,191,36,0.4);
-            background: rgba(255,255,255,0.9);
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        #nisInput:focus {
-            border-color: #fbbf24;
-            box-shadow: 0 0 10px rgba(251,191,36,0.5);
-        }
-        .map-wrapper {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            border-radius: 16px;
-            overflow: hidden;
-            
-            }
-
-        .map-wrapper iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    
 </head>
 <body>
 
     <!-- Animated Background -->
     <div class="bg-animation"></div>
+    <div class="stars"></div>
+    <!-- <div class="curve"></div> -->
 
     <!-- Header -->
     <header class="header">
         <div class="gold-line"></div>
-        <h1 class="main-title">SELAMAT DATANG</h1>
-        <p class="subtitle">Merayakan Pencapaian Luar Biasa <br><br></p>
+        <h1 class="main-title">Undangan</h1>
+        <h2 class="main-title">Pelepasan Siswa-Siswi Kelas XII</h2>
+        <h6 class="main-title">Tahun 2026</h6>
+
+        <p class="subtitle"> SMAK Kalam Kudus Bandung<br> </p>
+        <div class="logo-wrapper">
+            <img src="images/LOGO_BARU.png" class="logo">
+        </div>
         <div class="gold-line"></div>
     </header>
 
-    <div id="loginBox" style="text-align:center; margin-top:75px;">
-        <h2>Masukkan NIS<br><br></h2>
+    <div id="loginBox" style="text-align:center;">
+        <h2>Masukkan NIS</h2>
         <input type="text" id="nisInput" placeholder="cth: 232412345" style="padding:10px; border-radius:8px;">
         <br><br>
         <button onclick="cekNIS()" class="btn-gold">Masuk</button>
         <p id="errorMsg" style="color:red;"></p>
+        <br><br><br>
+        <div class="gold-line"></div>
     </div>
+    
+
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-content">
             <div class="loader-icon">
-                <i class="fas fa-graduation-cap"></i>
+                <i class="fas fa-scroll"></i>
             </div>
             <div style="color: #fbbf24; font-size: 1.2rem;">Mempersiapkan Undangan...</div>
         </div>
     </div>
+
 
     <!-- Main Container -->
     <div class="container">
@@ -548,10 +203,54 @@
             });
         }
     </script>
+    <script>
+        function createStars() {
+            const starsContainer = document.querySelector(".stars");
 
-    <div class="map-wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zfIB6HZKZIo?si=QcdFA8f6cfKu4L1O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+            for (let i = 0; i < 60; i++) {
+                const star = document.createElement("div");
+
+                // random size
+                const size = Math.random() * 3 + 1;
+
+                star.classList.add("star");
+
+                // random warna (white/gold)
+                if (Math.random() > 0.7) {
+                    star.classList.add("gold");
+                } else {
+                    star.classList.add("white");
+                }
+
+                star.style.width = size + "px";
+                star.style.height = size + "px";
+
+                // posisi random
+                star.style.left = Math.random() * 100 + "vw";
+
+                // kecepatan beda-beda
+                const duration = Math.random() * 5 + 5;
+                star.style.animationDuration = duration + "s";
+
+                // delay biar ga barengan
+                star.style.animationDelay = Math.random() * 5 + "s";
+
+                starsContainer.appendChild(star);
+
+                star.style.filter = `blur(${Math.random() * 1}px)`;
+            }
+        }
+
+        createStars();
+        if (Math.random() > 0.5) {
+            star.style.animation = `fall ${duration}s linear infinite`;
+        } else {
+            star.style.animation = `twinkle ${Math.random()*3+2}s ease-in-out infinite`;
+        }
+    </script>
+
+
+
 
 </body>
 </html>
