@@ -28,10 +28,7 @@
 </head>
 <body>
 
-    <!-- Animated Background -->
-    <div class="bg-animation"></div>
-    <div class="stars"></div>
-    <!-- <div class="curve"></div> -->
+    
 
     <!-- Header -->
     <header class="header">
@@ -46,16 +43,35 @@
         </div>
         <div class="gold-line"></div>
     </header>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="stars"></div>
+    <!-- <div class="curve"></div> -->
 
-    <div id="loginBox" style="text-align:center;">
-        <h2>Masukkan NIS</h2>
-        <input type="text" id="nisInput" placeholder="cth: 232412345" style="padding:10px; border-radius:8px;">
-        <br><br>
-        <button onclick="cekNIS()" class="btn-gold">Masuk</button>
-        <p id="errorMsg" style="color:red;"></p>
-        <br><br><br>
-        <div class="gold-line"></div>
+    <div id="loginBox" class="login-screen">
+    <div class="login-container">
+
+        <!-- KIRI -->
+        <div class="login-left">
+            <img src="images/LOGO_BARU.png" class="logo">
+        </div>
+
+        <!-- KANAN -->
+        <div class="login-right">
+            <h1 class="login-title">Undangan Kelulusan</h1>
+            <p class="login-sub">SMAK Kalam Kudus Bandung</p>
+
+            <h2 class="login-sub">Masukkan NIS</h2>
+
+            <input type="text" id="nisInput" placeholder="cth: 232412345">
+
+            <button onclick="cekNIS()" class="btn-gold">Masuk</button>
+
+            <p id="errorMsg"></p>
+        </div>
+
     </div>
+</div>
     
 
     <!-- Loading Screen -->
@@ -64,7 +80,9 @@
             <div class="loader-icon">
                 <i class="fas fa-scroll"></i>
             </div>
-            <div style="color: #fbbf24; font-size: 1.2rem;">Mempersiapkan Undangan...</div>
+            <div style="color: #fbbf24; font-size: 1.2rem;">
+                Mempersiapkan Undangan Spesial...
+            </div>
         </div>
     </div>
 
@@ -180,27 +198,39 @@
     </script>
     <script>
         function cekNIS() {
-        const nis = document.getElementById("nisInput").value;
+            const nis = document.getElementById("nisInput").value;
 
-        fetch("https://opensheet.elk.sh/1wMpu2ZkvajchgvMdP3RkqlnCHB8UnQpZaGruVoS7fRU/Sheet1")
-            .then(res => res.json())
-            .then(data => {
+            // 🔥 tampilkan loading
+            const loader = document.getElementById("loader");
+            loader.style.display = "flex";
+            loader.classList.remove("hidden");
 
-            const siswa = data.find(item => item.NIS === nis);
+            fetch("https://opensheet.elk.sh/1wMpu2ZkvajchgvMdP3RkqlnCHB8UnQpZaGruVoS7fRU/Sheet1")
+                .then(res => res.json())
+                .then(data => {
 
-            if(siswa){
-                // TAMPILKAN UNDANGAN
-                document.getElementById("loginBox").style.display = "none";
-                document.querySelector(".container").style.display = "block";
+                    const siswa = data.find(item => item.NIS === nis);
 
-                // ISI NAMA ANAK
-                document.querySelector(".section div").innerText = siswa.nama;
+                    setTimeout(() => { // biar dramatis dikit 😏
+                        
+                        if(siswa){
+                            document.getElementById("loginBox").style.display = "none";
+                            document.querySelector(".container").style.display = "block";
+                            document.querySelector(".header").style.display = "block";
+                            document.querySelector(".footer").style.display = "block";
+                            document.body.style.overflow = "auto";
 
-            } else {
-                document.getElementById("errorMsg").innerText = "NIS tidak ditemukan!";
-            }
+                            document.querySelector(".section div").innerText = siswa.nama;
+                        } else {
+                            document.getElementById("errorMsg").innerText = "NIS tidak ditemukan!";
+                        }
 
-            });
+                        // 🔥 sembunyikan loading
+                        loader.classList.add("hidden");
+
+                    }, 1500); // delay 1.5 detik
+
+                });
         }
     </script>
     <script>
