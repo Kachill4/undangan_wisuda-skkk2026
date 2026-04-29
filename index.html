@@ -28,21 +28,6 @@
 </head>
 <body>
 
-    
-
-    <!-- Header -->
-    <header class="header">
-        <div class="gold-line"></div>
-        <h1 class="main-title">Undangan</h1>
-        <h2 class="main-title">Pelepasan Siswa-Siswi Kelas XII</h2>
-        <h6 class="main-title">Tahun 2026</h6>
-
-        <p class="subtitle"> SMAK Kalam Kudus Bandung<br> </p>
-        <div class="logo-wrapper">
-            <img src="images/LOGO_BARU.png" class="logo">
-        </div>
-        <div class="gold-line"></div>
-    </header>
     <!-- Animated Background -->
     <div class="bg-animation"></div>
     <div class="stars"></div>
@@ -58,7 +43,7 @@
 
         <!-- KANAN -->
         <div class="login-right">
-            <h1 class="login-title">Undangan Kelulusan</h1>
+            <h1 class="login-title">Undangan <br>ucapan syukur dan pelepasan siswa/i kelas XII</h1>
             <p class="login-sub">SMAK Kalam Kudus Bandung</p>
 
             <h2 class="login-sub">Masukkan NIS</h2>
@@ -92,75 +77,101 @@
         <!-- Graduate Info -->
         <section class="section">
             <h2 class="section-title">Kepada<br>Yth. Orang Tua/Wali<br>Siswa-Siswi</h2>
-            <div style="text-align: center; font-size: 2.5rem; color: #ffffff; margin-bottom: 1rem;">
+            <div id="namaSiswa" style="text-align: center; font-size: 2.5rem; color: #ffffff; margin-bottom: 1rem;">
                 [NAMA LENGKAP ANAK]
             </div>
             <div style="text-align: center; color: #94a3b8; font-size: 1.1rem;">
-                • Kelas XII • <br>• SMA Kristen Kalam Kudus Bandung •
+                • Kelas <a id="kelasSiswa" ></a>•
+            </div>
+            <div style="text-align: center; color: #94a3b8; font-size: 1.1rem;">
+                • SMA Kristen Kalam Kudus Bandung •
             </div>
         </section>
+
+        <!-- Header -->
+    <div class="header">
+        <div style="text-align: left; font-size: 1rem; color: #ffffff; margin-bottom: 1rem;">
+                
+            </div>
+        <div class="gold-line"></div>
+        <h4 class="login-sub">
+                Dengan penuh syukur mengundang Bpk/Ibu untuk dapat hadir dalam:
+        </h4>
+        <h2 class="main-title">Ucapan Syukur & Pelepasan Siswa/i Kelas XII</h2>
+        <h3 class="main-title">Tahun Ajaran 2025/2026</h3>
+        <h4 class="main-title">Angkatan XXX</h4>
+
+
+        <p class="subtitle"> SMAK Kalam Kudus Bandung<br> </p>
+        <div class="logo-wrapper">
+            <img src="images/LOGO_BARU.png" class="logo">
+        </div>
+        <div class="gold-line"></div>
+    </div>
 
         <!-- Event Details -->
         <section class="section">
             <h2 class="section-title">RINGKASAN ACARA</h2>
             <div class="event-grid">
                 <div class="event-item">
+                    <div class="event-label">Tanggal</div>
                     <div class="event-icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <div class="event-value">9 Juni 2026</div>
-                    <div class="event-label">Tanggal</div>
                 </div>
                 <div class="event-item">
+                    <div class="event-label">Waktu</div>
                     <div class="event-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <div class="event-value">09.00 WIB - Selesai</div>
-                    <div class="event-label">Waktu</div>
+                    <div class="event-value">13.00 WIB - Selesai</div>
                 </div>
             </div>
             <div class="event-grid">
                 <div class="event-item">
+                    <div class="event-label">Lokasi</div>
                     <div class="event-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="event-value">Jl. Peta</div>
-                    <div class="event-label">Lokasi</div>
                     <div class="event-label">Balai Sartika Convention Hall</div>
                 </div>
             </div>
-
-            <!-- MAP DI LUAR -->
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.564015829746!2d107.62223836065756!3d-6.942592567934915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e63a678eb8eb%3A0xbc6627a16907037f!2sBalai%20Sartika!5e0!3m2!1sid!2sid!4v1776152682377!5m2!1sid!2sid" loading="lazy" allowfullscreen></iframe>
-                <!-- loading="lazy" allowfullscreen> -->
-            </div>
-
-            <div style="margin-top: 10px;">
-                <a href="https://maps.app.goo.gl/xMPtypLuns9GvdKC9" target="_blank" class="rsvp-btn">
-                    📍 Buka di Google Maps
-                </a>
-            </div>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.564015829746!2d107.62223836065756!3d-6.942592567934915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e63a678eb8eb%3A0xbc6627a16907037f!2sBalai%20Sartika!5e0!3m2!1sid!2sid!4v1776152682377!5m2!1sid!2sid" loading="lazy" allowfullscreen></iframe>
+                    <!-- loading="lazy" allowfullscreen> -->
+                </div>
+                <div style="margin-top: 10px;">
+                    <a href="https://maps.app.goo.gl/xMPtypLuns9GvdKC9" target="_blank" class="rsvp-btn">
+                        📍 Buka di Google Maps
+                    </a>
+                </div>
         </section>
 
-        <!-- Additional Info -->
         <section class="section">
-            <h2 class="section-title">INFORMASI TAMBAHAN</h2>
+            <h2 class="section-title">Dress Code</h2>
             <div style="text-align: center; line-height: 1.8; color: #e2e8f0;">
-                <p>Kami dengan penuh syukur mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara penuh makna ini.</p>
-                <br>
-                <p><strong>Dress Code:</strong></p>
-                <div class="dress-code">
-                    <span class="dress-item">Batik Bebas</span>
+                <div class="dress-container">
+
+                    <div class="dress-card">
+                        <div class="dress-label">Batik Bebas</div>
+                        <img src="images/batik1.png">
+                    </div>
+
+                    <div class="dress-card">
+                        <div class="dress-label">Batik Bebas</div>
+                        <img src="images/batik2.png">
+                    </div>
+
                 </div>
-                <br>
-                <p>Ke hadiran Anda kami nantikan. Tuhan memberkati!</p>
             </div>
-            
-            <!-- RSVP Button -->
+            <p>Kehadiran Bpk/Ibu adalah sukacita bagi kami.</p>
+            <p>Jika ada kendala atau pertanyaan silahkan hubungi nomor di bawah ini</p>
+
             <a href="https://wa.me/628xxxxxxxxx?text=Saya%20konfirmasi%20hadir%20ke%20wisuda%20%5BNama%20Anak%5D%20-%209%20Juni%202026" 
                class="rsvp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Konfirmasi Kehadiran
+                <i class="fab fa-whatsapp"></i> QnA
             </a>
         </section>
     </div>
@@ -212,15 +223,16 @@
                     const siswa = data.find(item => item.NIS === nis);
 
                     setTimeout(() => { // biar dramatis dikit 😏
-                        
+
                         if(siswa){
                             document.getElementById("loginBox").style.display = "none";
                             document.querySelector(".container").style.display = "block";
                             document.querySelector(".header").style.display = "block";
                             document.querySelector(".footer").style.display = "block";
                             document.body.style.overflow = "auto";
-
-                            document.querySelector(".section div").innerText = siswa.nama;
+                            document.getElementById("namaSiswa").innerText = siswa.nama;
+                            document.getElementById("kelasSiswa").innerText = siswa.kelas;
+                            // document.querySelector(".section div").innerText = siswa.nama;
                         } else {
                             document.getElementById("errorMsg").innerText = "NIS tidak ditemukan!";
                         }
