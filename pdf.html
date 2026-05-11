@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Undangan Wisuda</title>
+
+<style>
+body {
+    font-family: 'Times New Roman', serif;
+    padding: 40px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.section {
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <p class="center">
+        Dengan penuh rasa syukur, kami mengundang Bapak/Ibu untuk hadir dalam:
+    </p>
+
+    <h2 class="title">Ucapan Syukur & Pelepasan Siswa/i Kelas XII</h2>
+    <p class="center">SMAK Kalam Kudus Bandung</p>
+
+    <div class="section center">
+        <p>Kepada Yth. Orang Tua/Wali dari:</p>
+        <h2 id="nama"></h2>
+        <p>Kelas <span id="kelas"></span></p>
+    </div>
+
+    <div class="section">
+        <p><b>Tanggal:</b> 9 Juni 2026</p>
+        <p><b>Waktu:</b> 13.00 WIB</p>
+        <p><b>Tempat:</b> Balai Sartika Bandung</p>
+    </div>
+
+    <div class="section center">
+        <p>Atas kehadiran Bapak/Ibu, kami ucapkan terima kasih.</p>
+        <p><b>Tuhan memberkati</b></p>
+    </div>
+
+</div>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+document.getElementById("nama").innerText = urlParams.get("nama");
+document.getElementById("kelas").innerText = urlParams.get("kelas");
+</script>
+
+</body>
+</html>
